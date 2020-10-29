@@ -1,0 +1,201 @@
+{
+    "name": "magento/project-community-edition",
+    "description": "eCommerce Platform for Growth (Community Edition)",
+    "type": "project",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "require": {        
+		"magento/product-community-edition": "2.4.1",
+        "magento/composer-root-update-plugin": "~1.0"
+    },
+    "replace": {
+		"magento/module-wishlist-analytics": "*",
+		"magento/module-offline-shipping": "*",
+		"magento/module-login-as-customer-sales": "*",
+		"magento/module-login-as-customer-quote": "*",
+		"magento/module-login-as-customer-page-cache": "*",
+		"magento/module-login-as-customer-log": "*",
+		"magento/module-login-as-customer-frontend-ui": "*",
+		"magento/module-login-as-customer-assistance": "*",
+		"magento/module-login-as-customer-api": "*",
+		"magento/module-login-as-customer-admin-ui": "*",
+		"magento/module-login-as-customer": "*",
+		"magento/google-shopping-ads": "*",
+		"magento/module-bundle-graph-ql": "*",
+		"magento/module-bundle-import-export": "*",
+		"magento/module-customer-downloadable-graph-ql": "*",
+		"magento/module-downloadable-graph-ql": "*",
+		"magento/module-downloadable-import-export": "*",
+		"magento/module-google-adwords": "*",
+		"magento/module-google-analytics": "*",
+		"magento/module-google-optimizer": "*",
+		"magento/module-grouped-import-export": "*",
+		"magento/module-grouped-product-graph-ql": "*",
+		"magento/module-inventory-in-store-pickup-shipping-admin-ui": "*",
+		"magento/module-inventory-in-store-pickup-webapi-extension": "*",
+		"magento/module-inventory-in-store-pickup-shipping-api": "*",
+		"magento/module-inventory-in-store-pickup-shipping": "*",
+		"magento/module-inventory-in-store-pickup-sales-api": "*",
+		"magento/module-inventory-in-store-pickup-sales-admin-ui": "*",
+		"magento/module-inventory-in-store-pickup-sales": "*",
+		"magento/module-inventory-in-store-pickup-quote-graph-ql": "*",
+		"magento/module-inventory-in-store-pickup-quote": "*",
+		"magento/module-inventory-in-store-pickup-multishipping": "*",
+		"magento/module-inventory-in-store-pickup-graph-ql": "*",
+		"magento/module-inventory-in-store-pickup-frontend": "*",
+		"magento/module-inventory-in-store-pickup-api": "*",
+		"magento/module-inventory-in-store-pickup-admin-ui": "*",
+		"magento/module-inventory-in-store-pickup": "*",
+		"magento/module-csp": "*",
+		"magento/module-tinymce-3": "*",
+		"magento/module-weee": "*",
+		"magento/module-weee-graph-ql": "*",
+		"magento/module-tax-import-export": "*",
+        "magento/module-two-factor-auth": "*",
+        "magento/module-cardinal-commerce": "*",
+        "magento/module-re-captcha-send-friend": "*",
+        "magento/module-re-captcha-paypal": "*",
+        "magento/module-re-captcha-version-2-invisible": "*",
+        "magento/module-re-captcha-version-2-checkbox": "*",
+        "magento/module-swagger": "*",
+        "magento/module-swagger-webapi-async": "*",
+        "magento/module-swagger-webapi": "*",
+        "magento/magento2-functional-testing-framework": "*",
+        "magento/language-nl_nl": "*",
+        "magento/module-adobe-ims-api": "*",
+        "magento/module-adobe-ims": "*",
+        "magento/module-adobe-stock-client-api": "*",
+        "magento/module-adobe-stock-client": "*",
+        "magento/module-adobe-stock-image-api": "*",
+        "magento/module-adobe-stock-asset-api": "*",
+        "magento/module-adobe-stock-admin-ui": "*",
+        "magento/module-adobe-stock-image-admin-ui": "*",
+        "magento/module-adobe-stock-image": "*",
+        "magento/module-adobe-stock-asset": "*",
+        "magento/adobe-stock-integration": "*",
+        "astock/stock-api-libphp": "*",
+        "paypal/module-braintree": "*",
+        "paypal/module-braintree-graph-ql": "*",
+        "magento/module-vault": "*",
+        "magento/module-instant-purchase": "*",
+        "magento/module-paypal": "*",
+        "braintree/braintree_php": "*",
+        "paypal/module-braintree-core": "*",
+        "temando/module-shipping-remover": "*",
+        "temando/module-shipping": "*",
+        "amzn/amazon-pay-sdk-php": "*",
+        "amzn/amazon-pay-and-login-with-amazon-core-module": "*",
+        "amzn/login-with-amazon-module": "*",
+        "amzn/amazon-pay-module": "*",
+        "amzn/amazon-pay-and-login-magento-2-module": "*",
+        "magento/module-send-friend": "*",
+        "dotmailer/dotmailer-magento2-extension": "*",
+        "dotmailer/dotmailer-magento2-extension-chat": "*",
+        "dotmailer/dotmailer-magento2-extension-package": "*",
+        "yotpo/magento2-module-yotpo-reviews": "*",
+        "yotpo/magento2-module-yotpo-reviews-bundle": "*",
+        "vertex/sdk": "*",
+        "vertex/module-tax": "*",
+        "vertex/module-address-validation": "*",
+        "vertex/product-magento-module": "*",
+        "klarna/module-core": "*",
+        "klarna/module-onsitemessaging": "*",
+        "klarna/module-ordermanagement": "*",
+        "klarna/module-kp": "*",
+        "klarna/m2-payments": "*",
+        "magento/language-zh_hans_cn": "*",
+        "magento/language-fr_fr": "*",
+        "magento/language-es_es": "*",
+        "magento/language-de_de": "*",
+        "magento/module-vault-graph-ql": "*",
+        "magento/module-usps": "*",
+        "magento/module-ups": "*",
+        "magento/module-send-friend-graph-ql": "*",
+        "magento/module-sample-data": "*",
+        "magento/module-paypal-graph-ql": "*",
+        "magento/module-paypal-captcha": "*",
+        "magento/module-new-relic-reporting": "*",
+        "magento/module-fedex": "*",
+        "magento/module-elasticsearch-6": "*",
+        "magento/module-dhl": "*"
+    },
+    "require-dev": {
+        "allure-framework/allure-phpunit": "~1.2.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+        "friendsofphp/php-cs-fixer": "~2.16.0",
+        "lusitanian/oauth": "~0.8.10",
+        "magento/magento-coding-standard": "*",
+        "magento/magento2-functional-testing-framework": "^3.0",
+        "pdepend/pdepend": "~2.7.1",
+        "phpcompatibility/php-compatibility": "^9.3",
+        "phpmd/phpmd": "^2.8.0",
+        "phpstan/phpstan": ">=0.12.3 <=0.12.23",
+        "phpunit/phpunit": "^9",
+        "sebastian/phpcpd": "~5.0.0",
+        "squizlabs/php_codesniffer": "~3.5.4"
+    },
+    "conflict": {
+        "gene/bluefoot": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Magento\\Framework\\": "lib/internal/Magento/Framework/",
+            "Magento\\Setup\\": "setup/src/Magento/Setup/",
+            "Magento\\": "app/code/Magento/",
+            "Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
+        },
+        "psr-0": {
+            "": [
+                "app/code/",
+                "generated/code/"
+            ]
+        },
+        "files": [
+            "app/etc/NonComposerComponentRegistration.php"
+        ],
+        "exclude-from-classmap": [
+            "**/dev/**",
+            "**/update/**",
+            "**/Test/**"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Magento\\Sniffs\\": "dev/tests/static/framework/Magento/Sniffs/",
+            "Magento\\Tools\\": "dev/tools/Magento/Tools/",
+            "Magento\\Tools\\Sanity\\": "dev/build/publication/sanity/Magento/Tools/Sanity/",
+            "Magento\\TestFramework\\Inspection\\": "dev/tests/static/framework/Magento/TestFramework/Inspection/",
+            "Magento\\TestFramework\\Utility\\": "dev/tests/static/framework/Magento/TestFramework/Utility/",
+            "Magento\\PhpStan\\": "dev/tests/static/framework/Magento/PhpStan/"
+        }
+    },
+    "version": "2.4.1",
+    "minimum-stability": "stable",
+    "repositories": {
+	"0": {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        },
+        "amasty": {
+            "type": "composer",
+            "url": "https://composer.amasty.com/community/"
+        },
+        "magento-baler": {
+            "type": "vcs",
+            "url": "git@github.com:magento/m2-baler.git"
+        },
+        "swissuplabs": {
+            "type": "composer",
+            "url": "https://ci.swissuplabs.com/api/packages.json"
+        }
+    },
+    "extra": {
+        "magento-force": "override"
+    }
+}
