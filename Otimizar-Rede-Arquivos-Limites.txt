@@ -33,6 +33,8 @@ sysctl -p
 systemctl daemon-reload
 -------------------------------------------------------------------------------
 
+timedatectl set-timezone America/Sao_Paulo
+
 
 
 
