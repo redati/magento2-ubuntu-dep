@@ -1,0 +1,46 @@
+nano /lib/systemd/system/varnish.service
+
+LimitNOFILE=131072
+LimitMEMLOCK=82000
+ExecStart=/usr/sbin/varnishd -j unix,user=vcache -F -a :80 -T localhost:6082 \
+        -a /var/run/varnish.sock,PROXY,user=varnish,group=www-data,mode=777 \
+        -f /etc/varnish/default.vcl -p tcp_fastopen=On -s Transient=malloc,512m \
+        -p workspace_client=256k -p workspace_client=256k -p thread_pool_add_delay=2 -p timeout_idle=75 -p idle_send_timeout=75 \
+        -p feature=+esi_disable_xml_check -p feature=+esi_ignore_https -p feature=+esi_ignore_other_elements \
+        -p http_resp_hdr_len=128k -p thread_pool_min=100 -p workspace_backend=256k \
+        -p thread_pool_max=1000 -S /etc/varnish/secret -s malloc,1024m
+
+
+
+nano /etc/varnish/default.vcl
+vcl 4.1;
+
+#fix real ip cloudflare e proxy.
+sub vcl_recv {
+    if (req.http.cf-connecting-ip) {
+            set req.http.X-Forwarded-For = req.http.cf-connecting-ip;
+    } else {
+            set req.http.X-Forwarded-For = client.ip;
+    }
+...
+
+#fazer cache da busca no catalogo (remover catalogsearch)
+    if (req.url ~ "/checkout") {
+        return (pass);
+    }
+...
+
+depurar sempre
+
+sub vcl_deliver {
+
+if (resp.http.x-varnish ~ " ") {
+            set resp.http.X-Magento-Cache-Debug = "HIT";
+            set resp.http.Grace = req.http.grace;
+        } else {
+            set resp.http.X-Magento-Cache-Debug = "MISS";
+        }
+
+
+
+
