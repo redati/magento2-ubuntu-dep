@@ -1,0 +1,5 @@
+nano /usr/lib/systemd/system/elasticsearch.service LimitMEMLOCK=infinity
+systemctl daemon-reload
+
+sudo nano /etc/elasticsearch/elasticsearch.yml configura nodes
+sudo nano /etc/elasticsearch/jvm.options configura memoria
