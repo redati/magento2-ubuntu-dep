@@ -6,6 +6,7 @@ ELASTICSEARCH 7.x <br>
 TENGINE 2.x + Naxsi, Brotli, GeoIP2, More Headers, PCRE JIT, libatomic, jemalloc, TCP Fast Open, file io, <br>
 PHP 7.4 + LZF, VIPS <br>
 VARNISH 6  <br>
+SWAP MEMORY   <br>
 
 <hr>
 
