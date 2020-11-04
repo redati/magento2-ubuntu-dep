@@ -38,5 +38,6 @@ dpkg-reconfigure tzdata
 
 
 
-
+#redis
+vm.overcommit_memory = 1
 
