@@ -1,0 +1,12 @@
+#source https://www.integer-net.com/magento-2-javascript-bundling-baler-devtools/
+#source https://gist.github.com/wigman/1728657aea3c2f92bcaeb6f400f0ae0d#file-terser-bundle-bash-script
+
+
+# npm install -g terser
+
+# set the path to your Magento theme. You may list multiple separated by spaces
+THEME_FOLDER=('pub/static/frontend/Magento/luma/')
+
+
+
+find ${THEME_FOLDER[@]} \( -name '*.js' -not -name '*.min.js' -not -name 'core-bundle.js' -not -name 'requirejs-bundle-config.js' \) -exec terser \{} -c -m reserved=['$','jQuery','define','require','exports'] -o \{} \;
