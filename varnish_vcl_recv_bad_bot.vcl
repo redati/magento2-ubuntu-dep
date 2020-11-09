@@ -1,5 +1,5 @@
 if ( 
-         || req.http.user-agent ~ "Aboundex"
+  req.http.user-agent ~ "Aboundex"
   || req.http.user-agent ~ "libssh2"
   || req.http.user-agent ~ "80legs"
   || req.http.user-agent ~ "360Spider"
