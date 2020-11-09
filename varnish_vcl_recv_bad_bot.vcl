@@ -1,3 +1,8 @@
+req.url ~ "/.well-known") {
+   return (pass);
+}
+
+
 if ( 
   req.http.user-agent ~ "Aboundex"
   || req.http.user-agent ~ "libssh2"
