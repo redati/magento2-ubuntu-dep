@@ -1,10 +1,7 @@
-req.url ~ "/.well-known") {
-   return (pass);
-}
-
-
-if ( 
-  req.http.user-agent ~ "Aboundex"
+if (
+  !req.url ~ "/.well-known"
+  && !req.http.user-agent ~ "Amasty_Fpc"
+  && req.http.user-agent ~ "Aboundex"
   || req.http.user-agent ~ "libssh2"
   || req.http.user-agent ~ "80legs"
   || req.http.user-agent ~ "360Spider"
