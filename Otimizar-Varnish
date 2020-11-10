@@ -45,5 +45,6 @@ if (resp.http.x-varnish ~ " ") {
         }
 
 
-
-
+#desabilitar logs de acesso
+systemctl disable varnishncsa
+service varnishncsa stop
