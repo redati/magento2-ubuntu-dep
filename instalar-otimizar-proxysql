@@ -54,3 +54,14 @@ default-character-set=utf8
 collation-server = utf8_unicode_ci
 init-connect='SET NAMES utf8'
 character-set-server = utf8
+
+##############################################################################
+#verificar sonsultas no banco
+#count_star: o número de vezes que essa consulta foi executada.
+#sum_time: tempo total em milissegundos que essa consulta levou para executar.
+#hostgroup: o grupo de hosts usado para executar a consulta.
+#digest: um resumo da consulta executada.
+#digest_text: a consulta em si. No exemplo deste tutorial, a segunda consulta é parametrizada usando sinais de ? no lugar de parâmetros de variável. select @@version_comment limit 1 e select @@version_comment limit 2 são, portanto, agrupados juntos como a mesma consulta e com o mesmo resumo.
+SELECT count_star,sum_time,hostgroup,digest,digest_text FROM stats_mysql_query_digest ORDER BY sum_time DESC;
+
+
