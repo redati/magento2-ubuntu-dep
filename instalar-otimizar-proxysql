@@ -38,8 +38,7 @@ LOAD MYSQL SERVERS TO RUNTIME;
 SAVE MYSQL SERVERS TO DISK;
 
 
-LOAD MYSQL QUERY RULES TO RUNTIME;
-SAVE MYSQL QUERY RULES TO DISK;
+
 
 
 definir charset em mysqld.cnf para evitar erros 
@@ -63,5 +62,11 @@ character-set-server = utf8
 #digest: um resumo da consulta executada.
 #digest_text: a consulta em si. No exemplo deste tutorial, a segunda consulta é parametrizada usando sinais de ? no lugar de parâmetros de variável. select @@version_comment limit 1 e select @@version_comment limit 2 são, portanto, agrupados juntos como a mesma consulta e com o mesmo resumo.
 SELECT count_star,sum_time,hostgroup,digest,digest_text FROM stats_mysql_query_digest ORDER BY sum_time DESC;
+
+#inserir as query rules que deve fazer o cache
+INSERT INTO mysql_query_rules(active, digest, cache_ttl, apply) VALUES(1,'0xC5DDECD7E966A6C4',2000,1);
+
+LOAD MYSQL QUERY RULES TO RUNTIME;
+SAVE MYSQL QUERY RULES TO DISK;
 
 
