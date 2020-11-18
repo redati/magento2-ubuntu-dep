@@ -1,0 +1,56 @@
+apt-get install proxysql2
+
+
+
+
+Acessar admin
+mysql -uadmin -p -h 127.0.0.1 -P6032
+admin
+
+
+
+configuração para socket unix 
+
+update global_variables set variable_value="0.0.0.0:6033;/tmp/psql.sock" where variable_name='mysql-interfaces';
+
+SAVE MYSQL VARIABLES TO DISK;
+
+
+inserir usuario para monitorar mysql
+
+UPDATE global_variables SET variable_value='monitor' WHERE variable_name='mysql-monitor_username';
+UPDATE global_variables SET variable_value='monitor_password' WHERE variable_name='mysql-monitor_password';
+
+
+#inserir usuarios de acessos 
+
+INSERT INTO mysql_users(username, password, default_hostgroup) VALUES ('sammy', 'sammy_password', 1);
+INSERT INTO mysql_users(username, password, default_hostgroup) VALUES ('root', '123456789', 1);
+
+LOAD MYSQL USERS TO RUNTIME;
+SAVE MYSQL USERS TO DISK;
+
+#inserir servidor 
+
+INSERT INTO mysql_servers(hostgroup_id, hostname, port) VALUES (1, '127.0.0.1', 3306);
+
+LOAD MYSQL SERVERS TO RUNTIME;
+SAVE MYSQL SERVERS TO DISK;
+
+
+LOAD MYSQL QUERY RULES TO RUNTIME;
+SAVE MYSQL QUERY RULES TO DISK;
+
+
+definir charset em mysqld.cnf para evitar erros 
+[client]
+default-character-set=utf8
+
+[mysql]
+default-character-set=utf8
+
+
+[mysqld]
+collation-server = utf8_unicode_ci
+init-connect='SET NAMES utf8'
+character-set-server = utf8
