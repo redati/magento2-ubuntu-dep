@@ -7,12 +7,14 @@ Acessar admin
 mysql -uadmin -p -h 127.0.0.1 -P6032
 admin
 
-
+teste de configuração
+mysql -usammy -h127.0.0.1 -p -P6033 -e "SELECT @@HOSTNAME as hostname"
 
 configuração para socket unix 
 
 update global_variables set variable_value="0.0.0.0:6033;/tmp/psql.sock" where variable_name='mysql-interfaces';
 
+LOAD MYSQL VARIABLES TO RUNTIME;
 SAVE MYSQL VARIABLES TO DISK;
 
 
@@ -46,23 +48,28 @@ SAVE MYSQL SERVERS TO DISK;
 
 definir charset em mysqld.cnf para evitar erros 
 [client]
-default-character-set=utf8
+default-character-set=utf8mb4
 
 [mysql]
-default-character-set=utf8
+default-character-set=utf8mb4
 
 
 [mysqld]
 collation-server = utf8_unicode_ci
 init-connect='SET NAMES utf8'
-character-set-server = utf8
+character-set-server = utf8mb4
 
 ##############################################################################
 
 https://proxysql.com/documentation/query-cache/
 https://www.digitalocean.com/community/tutorials/how-to-optimize-mysql-queries-with-proxysql-caching-on-ubuntu-16-04-pt
 
-estatisticas SELECT * FROM stats_mysql_global WHERE Variable_Name LIKE 'Query_Cache%';
+estatisticas:
+SELECT * FROM stats_mysql_global WHERE Variable_Name LIKE 'Query_Cache%';
+SELECT * FROM stats_mysql_query_rules;
+
+alterar uso de memoria mysql-query_cache_size_MB=128; LOAD MYSQL VARIABLES TO RUNTIME;
+limpar cache PROXYSQL FLUSH QUERY CACHE
 
 #verificar sonsultas no banco
 #count_star: o número de vezes que essa consulta foi executada.
