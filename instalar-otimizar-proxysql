@@ -33,6 +33,9 @@ SAVE MYSQL USERS TO DISK;
 #inserir servidor 
 
 INSERT INTO mysql_servers(hostgroup_id, hostname, port) VALUES (1, '127.0.0.1', 3306);
+ou
+INSERT INTO mysql_servers(hostgroup_id, hostname, port) VALUES (1, '/var/run/mysqld/mysqld.sock', 0);
+
 
 LOAD MYSQL SERVERS TO RUNTIME;
 SAVE MYSQL SERVERS TO DISK;
@@ -55,6 +58,12 @@ init-connect='SET NAMES utf8'
 character-set-server = utf8
 
 ##############################################################################
+
+https://proxysql.com/documentation/query-cache/
+https://www.digitalocean.com/community/tutorials/how-to-optimize-mysql-queries-with-proxysql-caching-on-ubuntu-16-04-pt
+
+estatisticas SELECT * FROM stats_mysql_global WHERE Variable_Name LIKE 'Query_Cache%';
+
 #verificar sonsultas no banco
 #count_star: o número de vezes que essa consulta foi executada.
 #sum_time: tempo total em milissegundos que essa consulta levou para executar.
