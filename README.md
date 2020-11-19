@@ -1,6 +1,12 @@
 # magento2-ubuntu-dep
 Instalações de dependências para servidor ubuntu 20 com Magento 2.4
 
+Cache L2 para backend Magento.
+Cache Varnish para frontend Magento.
+Otimização Redis Preload (pipeline).
+Cache de query select com proxysql.
+
+
 MYSQL 8.x <br>
 ELASTICSEARCH 7.x <br>
 TENGINE 2.x + Naxsi, Brotli, GeoIP2, More Headers, PCRE JIT, libatomic, jemalloc, TCP Fast Open, file io, <br>
