@@ -1,3 +1,8 @@
+# Donation Button
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VW4F8S5SKZRAN&currency_code=BRL)
+
+
 # magento2-ubuntu-dep
 Instalações de dependências para servidor ubuntu 20 com Magento 2.4
 
