@@ -48,3 +48,15 @@ if (resp.http.x-varnish ~ " ") {
 #desabilitar logs de acesso
 systemctl disable varnishncsa
 service varnishncsa stop
+
+#comandos uteis para varnish
+#parametros de configuração
+varnishadm param.show
+#variaveis de status
+varnishstat
+#verificar requisições com erros
+varnishlog -q 'RespStatus == 503' -g request
+#validar arquivo vcl
+varnishd -C -f /etc/varnish/default.vcl
+#salver log de requisições com erros
+varnishlog -a -A -w /var/log/varnish/varnish50x.log -q "RespStatus >= 500 or BerespStatus >= 500"
