@@ -23,5 +23,5 @@ SWAP MEMORY   <br>
 
 No futuro   <br>
 Percona Monitoring and Management    <br>
-rabbitmq-server  Monitoring and Management 
+rabbitmq-server  Monitoring and Management <br>
 https://github.com/intel/asynch_mode_nginx
