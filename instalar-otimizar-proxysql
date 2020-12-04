@@ -14,6 +14,10 @@ configuração para socket unix
 
 update global_variables set variable_value="0.0.0.0:6033;/tmp/psql.sock" where variable_name='mysql-interfaces';
 
+update global_variables set variable_value="5" where variable_name='mysql-tcp_keepalive_time';
+update global_variables set variable_value="1" where variable_name='mysql-use_tcp_keepalive';
+update global_variables set variable_value="3" where variable_name='mysql-query_retries_on_failure';
+
 LOAD MYSQL VARIABLES TO RUNTIME;
 SAVE MYSQL VARIABLES TO DISK;
 
