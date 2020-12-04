@@ -3,3 +3,7 @@ systemctl daemon-reload
 
 sudo nano /etc/elasticsearch/elasticsearch.yml configura nodes
 sudo nano /etc/elasticsearch/jvm.options configura memoria
+
+
+nano /etc/default/elasticsearch
+add LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libjemalloc.so.2
