@@ -7,3 +7,11 @@ sudo nano /etc/elasticsearch/jvm.options configura memoria
 
 nano /etc/default/elasticsearch
 add LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libjemalloc.so.2
+
+
+#FAZER LOG DE ERROS APENAS
+
+nano /etc/elasticsearch/log4j2.properties
+
+logger.action.level = error 
+...level = error 
