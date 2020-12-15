@@ -1,0 +1,349 @@
+
+##########################################################################
+#
+# doxi_rulesets - rules for nginx+naxsi blah blah
+# desc      : WEB_APPS
+# file      : web_apps.rules
+# created   : 2017-02-01 - 20:37
+# by        : nginx-goodies
+# download  : https://bitbucket.org/lazy_dogtown/doxi-rules
+#
+###########################################################################
+
+#
+# sid: 42000460 | date: 2017-02-01 - 20:34 
+#
+# https://www.reddit.com/r/netsec/comments/5rgpxm/content_injection_vulnerability_in_wordpress_47/
+# https://blog.sucuri.net/2017/02/content-injection-vulnerability-wordpress-rest-api.html
+# https://blogs.akamai.com/2017/02/wordpress-web-api-vulnerability.html
+#
+#MainRule negative "rx:^\d+$" "msg:WordPress API Content Injection (GET)" "mz:|$URL:/wp-json/wp/v2/posts/|$ARGS_VAR:id" "s:$ATTACK:8" id:42000460  ;
+      
+       
+#
+# sid: 42000459 | date: 2017-02-01 - 20:32 
+#
+# https://www.reddit.com/r/netsec/comments/5rgpxm/content_injection_vulnerability_in_wordpress_47/
+# https://blog.sucuri.net/2017/02/content-injection-vulnerability-wordpress-rest-api.html
+# https://blogs.akamai.com/2017/02/wordpress-web-api-vulnerability.html
+#
+#MainRule negative "rx:^\d+$" "msg:WordPress API Content Injection (POST)" "mz:$URL:/wp-json/wp/v2/posts/|$BODY_VAR:id" "s:$ATTACK:8" id:42000459  ;
+      
+       
+#
+# sid: 42000444 | date: 2015-10-20 - 19:37 
+#
+# 
+#
+#MainRule  "str:system.getcapabilities" "msg:WordPress XMLRPC Enumeration system.getCapabilities" "mz:$URL:/xmlrpc.php|BODY" "s:$ATTACK:8" id:42000444  ;
+      
+       
+#
+# sid: 42000443 | date: 2015-10-20 - 19:37 
+#
+# 
+#
+#MainRule  "str:system.listmethods" "msg:WordPress XMLRPC Enumeration system.listMethods" "mz:$URL:/xmlrpc.php|BODY" "s:$ATTACK:8" id:42000443  ;
+      
+       
+#
+# sid: 42000442 | date: 2015-10-19 - 07:55 
+#
+# credits: sucuri - https://blog.sucuri.net/2015/10/brute-force-amplification-attacks-against-wordpress-xmlrpc.html
+#
+#MainRule  "str:system.multicall" "msg:Wordpress XMLRPC possible Password Brute Force" "mz:$URL:/xmlrpc.php|BODY" "s:$ATTACK:8" id:42000442  ;
+      
+       
+#
+# sid: 42000430 | date: 2015-05-09 - 07:52 
+#
+# https://blog.sucuri.net/2015/05/jetpack-and-twentyfifteen-vulnerable-to-dom-based-xss.html
+#
+#MainRule  "str:/genericons/example.html" "msg:WordPress Default Template Bug Scan" "mz:URL" "s:$ATTACK:8" id:42000430  ;
+      
+       
+#
+# sid: 42000429 | date: 2015-04-23 - 07:47 
+#
+# https://www.byte.nl/blog/exploit-voor-zeer-serieus-magento-lek-supee-5344/
+# https://shoplift.byte.nl/
+#
+MainRule  "str:/cms_wysiwyg" "msg:Magento Shoplift-Bug-Scan" "mz:URL" "s:$ATTACK:8" id:42000429  ;
+      
+       
+#
+# sid: 42000408 | date: 2014-10-30 - 16:42 
+#
+# credits: bui
+# https://www.drupal.org/SA-CORE-2014-005
+# http://www.reddit.com/r/netsec/comments/2jbu8g/sacore2014005_drupal_core_sql_injection/
+# http://pastebin.com/F2Dk9LbX
+#
+#MainRule  "rx:name\[\d+.{20,}\]" "msg:Drupal SQLI & RCE-Exploit Attempt #2 (rx)" "mz:BODY" "s:$ATTACK:8" id:42000408  ;
+      
+       
+#
+# sid: 42000407 | date: 2014-10-29 - 15:00 
+#
+# https://twitter.com/sonassi/status/523176348458967040
+# http://www.exploit-db.com/exploits/35052/
+#
+MainRule  "str:/magmi/" "msg:Magento - MAGMI - Access" "mz:URL" "s:$ATTACK:8" id:42000407  ;
+      
+       
+#
+# sid: 42000406 | date: 2014-10-26 - 12:36 
+#
+# https://twitter.com/sonassi/status/52317634845896704
+# http://www.exploit-db.com/exploits/35052/
+#
+MainRule  "str:/web/ajax_readlocalxml.php" "msg:Magento - MAGMI - ajax_readlocalxml.php" "mz:URL" "s:$ATTACK:8" id:42000406  ;
+      
+       
+#
+# sid: 42000405 | date: 2014-10-26 - 12:36 
+#
+# https://twitter.com/sonassi/status/523176348458967040
+# http://www.exploit-db.com/exploits/35052/
+#
+MainRule  "str:/web/clearcatalog.php" "msg:Magento - MAGMI - clearcatalog.php" "mz:URL" "s:$ATTACK:8" id:42000405  ;
+      
+       
+#
+# sid: 42000404 | date: 2014-10-29 - 15:03 
+#
+# https://twitter.com/sonassi/status/523176348458967040
+# http://www.exploit-db.com/exploits/35052/
+#
+MainRule  "rx:/web/magmi_([a-z]*).php" "msg:Magento - MAGMI - magmi_*.php - Access" "mz:URL" "s:$ATTACK:8" id:42000404  ;
+      
+       
+#
+# sid: 42000403 | date: 2014-10-26 - 12:37 
+#
+# https://twitter.com/sonassi/status/523176348458967040
+# http://www.exploit-db.com/exploits/35052/
+#
+MainRule  "str:/web/plugin_upload.php" "msg:Magento - MAGMI - Plugin-Upload " "mz:URL" "s:$ATTACK:8" id:42000403  ;
+      
+       
+#
+# sid: 42000401 | date: 2014-10-26 - 12:37 
+#
+# https://twitter.com/sonassi/status/523176348458967040
+# http://www.exploit-db.com/exploits/35052/
+#
+MainRule  "str:/web/magmi.php" "msg:Magento - MAGMI-Access (possible Scan)" "mz:URL" "s:$ATTACK:8" id:42000401  ;
+      
+       
+#
+# sid: 42000399 | date: 2014-10-17 - 12:24 
+#
+# https://www.drupal.org/SA-CORE-2014-005# http://www.reddit.com/r/netsec/comments/2jbu8g/sacore2014005_drupal_core_sql_injection/# http://pastebin.com/F2Dk9LbX
+#
+#MainRule  "str:name[0%20" "msg:Drupal SQLI & RCE-Exploit Attempt (CVE-2014-3704)" "mz:BODY" "s:$ATTACK:8" id:42000399  ;
+      
+       
+#
+# sid: 42000360 | date: 2014-04-14 - 21:23 
+#
+# https://github.com/contao/core/issues/6855#issuecomment-39571171
+#
+MainRule  "str:/contao/install.php" "msg:Contao-Install install.php - Access" "mz:URL" "s:$UWA:8" id:42000360  ;
+      
+       
+#
+# sid: 42000359 | date: 2014-04-14 - 21:20 
+#
+# 
+#
+MainRule  "str:typo3_conf" "msg:TYPO3_CONF_* Value - Injection" "mz:ARGS" "s:$UWA:8" id:42000359  ;
+      
+       
+#
+# sid: 42000358 | date: 2014-04-14 - 22:22 
+#
+# 
+#
+MainRule  "str:/typo3/" "msg:Typo3-Backend-Access" "mz:URL" "s:$UWA:8" id:42000358  ;
+      
+       
+#
+# sid: 42000357 | date: 2014-04-14 - 21:14 
+#
+# https://github.com/contao/check
+#
+#MainRule  "str:installer" "msg:Contao-InstallTool-Access" "mz:$ARGS_VAR:c" "s:$UWA:8" id:42000357  ;
+      
+       
+#
+# sid: 42000356 | date: 2014-04-14 - 20:43 
+#
+# https://github.com/contao/core/issues/6855# https://github.com/contao/core/pull/6863/files
+#
+#MainRule  "str:tl_" "msg:Contao VAR TL_* - Injection" "mz:ARGS" "s:$UWA:8" id:42000356  ;
+      
+       
+#
+# sid: 42000347 | date: 2014-03-29 - 19:29 
+#
+# http://blog.sucuri.net/2014/03/unmasking-free-premium-wordpress-plugins.html
+#
+#MainRule  "str:jjoplmh" "msg:Possible Wordpress-Plugin-Backdoor detected" "mz:ARGS|$ARGS_VAR:cms" "s:$UWA:8" id:42000347  ;
+      
+       
+#
+# sid: 42000324 | date: 2013-10-12 - 00:24 
+#
+# http://www.vbulletin.com/forum/forum/vbulletin-announcements/vbulletin-announcements_aa/3991423-potential-vbulletin-exploit-vbulletin-4-1-vbulletin-5# # http://www.vbulletin.org/forum/showthread.php?p=2443431
+#
+MainRule  "str:/install/upgrade.php" "msg:Potential vBulletin Exploit (v4+)" "mz:URL" "s:$ATTACK:8" id:42000324  ;
+      
+       
+#
+# sid: 42000322 | date: 2013-10-12 - 00:20 
+#
+# http://www.vbulletin.com/forum/forum/vbulletin-announcements/vbulletin-announcements_aa/3991423-potential-vbulletin-exploit-vbulletin-4-1-vbulletin-5# # http://www.vbulletin.org/forum/showthread.php?p=2443431
+#
+MainRule  "str:/core/install/upgrade.php" "msg:Potential vBulletin Exploit (v5+)" "mz:URL" "s:$UWA:8" id:42000322  ;
+      
+       
+#
+# sid: 42000276 | date: 2013-07-21 - 10:19 
+#
+# https://www.owasp.org/index.php/HTTP_Request_Smuggling
+#
+MainRule  "str:get http" "msg:HTTP - Smuggling-Attempt (Proxy-GET in Headers)" "mz:HEADERS" "s:$EVADE:8" id:42000276  ;
+      
+       
+#
+# sid: 42000239 | date: 2013-01-24 - 17:30 
+#
+# typo3-standard-featurte, DONTWANT
+#
+MainRule  "str:jumpurl=" "msg:Typo3-JumpURL-Access " "mz:ARGS" "s:$UWA:8" id:42000239  ;
+      
+       
+#
+# sid: 42000126 | date: 2012-12-25 - 12:28 
+#
+# http://www.securityfocus.com/bid/53787/info# http://downloads.securityfocus.com/vulnerabilities/exploits/53787.php
+#
+MainRule  "str:/uploadify/uploadify.php" "msg:WordPress Uploadify-Access" "mz:URL" "s:$ATTACK:8" id:42000126  ;
+      
+       
+#
+# sid: 42000125 | date: 2012-12-25 - 11:49 
+#
+# http://seclists.org/fulldisclosure/2012/Dec/242# http://git.zx2c4.com/w3-total-fail/tree/w3-total-fail.sh
+#
+#MainRule  "str:/w3tc/dbcache" "msg:WordPress TotalCache-DBCache-Access" "mz:URL" "s:$UWA:8" id:42000125  ;
+      
+       
+#
+# sid: 42000124 | date: 2012-12-21 - 14:02 
+#
+# probably malicious access to plugins/cache - dir on wordpress# http://packetstormsecurity.org/files/view/105240/timthumb-exec.txt
+#
+#MainRule  "rx:/wp-content/plugins/(.*)/cache/" "msg:WP Plugins/Cache - Access" "mz:URL" "s:$ATTACK:8" id:42000124  ;
+      
+       
+#
+# sid: 42000123 | date: 2012-12-21 - 13:59 
+#
+# http://markmaunder.com/2011/08/01/zero-day-vulnerability-in-many-wordpress-themes/# http://packetstormsecurity.org/files/view/105240/timthumb-exec.txt
+#
+MainRule  "str:/timthumbdir/cache" "msg:WP TimThumb - Cache - Access " "mz:URL" "s:$ATTACK:8" id:42000123  ;
+      
+       
+#
+# sid: 42000089 | date: 2012-12-18 - 14:14 
+#
+# 
+#
+#MainRule  "str:/xmlrpc.php" "msg:XMLRPC - Access detected (misc Wordpress/Magento-Vulns)" "mz:URL" "s:$UWA:8" id:42000089  ;
+      
+       
+#
+# sid: 42000088 | date: 2015-01-30 - 00:22 
+#
+# http://seclists.org/bugtraq/2012/Dec/101
+# https://github.com/FireFart/WordpressPingbackPortScanner
+# http://www.acunetix.com/blog/web-security-zone/wordpress-pingback-vulnerability/
+#
+#MainRule  "str:pingback.ping" "msg:Possible WordpressPingbackPortScanner" "mz:$URL:/xmlrpc.php|BODY" "s:$ATTACK:8" id:42000088  ;
+      
+       
+#
+# sid: 42000086 | date: 2012-11-27 - 18:47 
+#
+# http://piwik.org/blog/2012/11/security-report-piwik-org-webserver-hacked-for-a-few-hours-on-2012-nov-26th/# http://forum.piwik.org/read.php?2,97666
+#
+MainRule  "str:/core/datatable/filter/megre.php" "msg:PIWIK-RemoteShell Access" "mz:URL" "s:$ATTACK:8,$UWA:8" id:42000086  ;
+      
+       
+#
+# sid: 42000085 | date: 2012-11-27 - 18:46 
+#
+# http://piwik.org/blog/2012/11/security-report-piwik-org-webserver-hacked-for-a-few-hours-on-2012-nov-26th/# http://forum.piwik.org/read.php?2,97666
+#
+MainRule  "str:/core/loader.php" "msg:PIWIK-Backdoor-Access " "mz:URL" "s:$ATTACK:8,$UWA:8" id:42000085  ;
+      
+       
+#
+# sid: 42000071 | date: 2012-10-18 - 09:37 
+#
+# http://www.securityfocus.com/bid/34236/info
+#
+MainRule  "str:/scripts/setup.php" "msg:PHPMYADMIN setup.php - Access " "mz:URL" "s:$ATTACK:8" id:42000071  ;
+      
+       
+#
+# sid: 42000065 | date: 2012-10-18 - 09:16 
+#
+# www.magentocommerce.com/blog/comments/important-security-update-zend-platform-vulnerability/# www.magentocommerce.com/blog/update-zend-framework-vulnerability-security-update# www.exploit-db.com/exploits/19793/
+#
+#MainRule  "str:/api/xmlrpc" "msg:Magento XMLRPC-Exploit Attempt" "mz:URL|BODY" "s:$ATTACK:8" id:42000065  ;
+      
+       
+#
+# sid: 42000060 | date: 2012-10-18 - 08:34 
+#
+# et sid:2015726# www.exploit-db.com/exploits/18997/# CVE 2012-3574
+#
+#MainRule  "str:/wp-content/plugins/mm-forms-community/upload/temp/" "msg:Access To mm-forms-community upload dir" "mz:URL" "s:$ATTACK:8" id:42000060  ;
+      
+       
+#
+# sid: 42000059 | date: 2012-10-18 - 08:33 
+#
+# et sid:2015726# www.exploit-db.com/exploits/18997/# CVE 2012-3574
+#
+#MainRule  "str:wp-content/plugins/mm-forms-community/includes/doajaxfileupload.php" "msg:Possible unwanted Upload / Access To mm-forms-community upload dir" "mz:URL" "s:$ATTACK:8,$UWA:8" id:42000059  ;
+      
+       
+#
+# sid: 42000058 | date: 2012-10-18 - 08:27 
+#
+# et sid:2015737# www.phpmyadmin.net/home_page/security/PMASA-2012-5.php
+#
+MainRule  "str:/server_sync.php" "msg:PHPMyAdmin BackDoor Access" "mz:URL" "s:$ATTACK:8" id:42000058  ;
+      
+       
+#
+# sid: 42000056 | date: 2012-10-18 - 08:22 
+#
+# et sid:2015794
+#
+MainRule  "str:&pfilez=" "msg:PhpTax Possible Remote Code Exec" "mz:URL" "s:$ATTACK:8,$UWA:8" id:42000056  ;
+      
+       
+#
+# sid: 42000055 | date: 2012-10-17 - 16:39 
+#
+# http://www.exploit-db.com/exploits/21851/
+#
+MainRule  "str:/file/show.cgi/bin/" "msg:WEBMIN /file/show.cgi Remote Command Execution" "mz:URL" "s:$ATTACK:8,$UWA:8" id:42000055  ;
+      
+       
+
