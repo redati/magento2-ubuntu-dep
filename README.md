@@ -25,3 +25,12 @@ No futuro   <br>
 Percona Monitoring and Management    <br>
 rabbitmq-server  Monitoring and Management <br>
 https://github.com/intel/asynch_mode_nginx
+
+######################### Configuração Tengine Nginx ###########################
+
+Arquivos para alterar manualmente:
+/etc/nginx/security/hosts.conf;
+/etc/nginx/segurity/limit_req_zone.conf;
+/etc/nginx/upstream.conf;
+
+########################## fim nginx ############################################
