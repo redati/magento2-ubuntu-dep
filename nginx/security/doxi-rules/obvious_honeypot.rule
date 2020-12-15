@@ -1,0 +1,27 @@
+##########################################################################
+#
+# doxi_rulesets - rules for nginx+naxsi blah blah
+# desc      : HONEYPOTS
+# file      : obvious_honeypot.rules
+# created   : 2015-06-17 - 08:50
+# by        : nginx-goodies
+# download  : https://bitbucket.org/lazy_dogtown/doxi-rules
+#
+###########################################################################
+
+#
+# sid: 42000435 | date: 2015-06-17 - 08:37 
+#
+# https://gist.github.com/joernchen/d868521352f1ccd25095
+#
+MainRule  "str:/console" "msg:Obvious /console - Access" "mz:URL" "s:$UWA:8" id:42000435  ;
+      
+       
+#
+# sid: 42000413 | date: 2015-01-23 - 14:11 
+#
+# 
+#
+MainRule  "str:/login" "msg:Obvious /login - Scan" "mz:URL" "s:$UWA:8" id:42000413  ;
+      
+       
