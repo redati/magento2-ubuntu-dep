@@ -1,8 +1,0 @@
-# permitir apeans host que esteja na lista
-# uso em Server if ($hostp = 0) { return 403; }
-
-map $host $hostp {
-		default 0;
-		exemplo.com 1;
-		127.0.0.1 1;
-}
