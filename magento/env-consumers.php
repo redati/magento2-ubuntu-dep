@@ -1,3 +1,5 @@
+#turorial https://misaelgomes.com.br/otimizacao-avancada-para-magento-2-melhoria-de-performance-no-backend-e-frontend/
+
 'cron_consumers_runner' => [
         'consumers_wait_for_messages' => 0,
         'cron_run' => true,
