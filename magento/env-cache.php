@@ -1,3 +1,4 @@
+#turorial https://misaelgomes.com.br/otimizacao-avancada-para-magento-2-melhoria-de-performance-no-backend-e-frontend/
 'cache' => [
         'frontend' => [
             'default' => [
