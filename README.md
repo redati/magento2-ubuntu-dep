@@ -3,7 +3,7 @@
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VW4F8S5SKZRAN&currency_code=BRL)
 
 # Tutorial Otimização no Magento 2 Completo
-#turorial https://misaelgomes.com.br/otimizacao-avancada-para-magento-2-melhoria-de-performance-no-backend-e-frontend/
+https://misaelgomes.com.br/otimizacao-avancada-para-magento-2-melhoria-de-performance-no-backend-e-frontend/
 
 # magento2-ubuntu-dep
 Instalações de dependências para servidor ubuntu 20 com Magento 2.4
