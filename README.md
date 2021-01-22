@@ -1,6 +1,9 @@
 # Donation Button
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VW4F8S5SKZRAN&currency_code=BRL)
+BTC: 186G27ihcCjKjZFRjo1a4WFhU6R21tjYeZ
+ETH: 0xa593484725e612f83398a0f475181c40b2ff13a5
+
 
 # Tutorial Otimização no Magento 2 Completo
 https://misaelgomes.com.br/otimizacao-avancada-para-magento-2-melhoria-de-performance-no-backend-e-frontend/
