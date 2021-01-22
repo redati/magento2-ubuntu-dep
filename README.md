@@ -8,6 +8,9 @@ ETH: 0xa593484725e612f83398a0f475181c40b2ff13a5
 # Tutorial Otimização no Magento 2 Completo
 https://misaelgomes.com.br/otimizacao-avancada-para-magento-2-melhoria-de-performance-no-backend-e-frontend/
 
+# Tutorial Segurança Nginx Ubuntu - Bloqueio de ASN
+https://misaelgomes.com.br/proteja-seu-site-loja-e-reduza-custos-de-trafego-de-forma-facil-com-nginx-e-geoip2-e-uma-lista-de-asn/
+
 # magento2-ubuntu-dep
 Instalações de dependências para servidor ubuntu 20 com Magento 2.4
 
