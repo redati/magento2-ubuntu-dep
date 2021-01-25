@@ -1,5 +1,3 @@
-# Donation Button
-
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VW4F8S5SKZRAN&currency_code=BRL)
 BTC: 34w8cMM86tpXWqTaoVChC6FM5XBPGfM4V7
 
