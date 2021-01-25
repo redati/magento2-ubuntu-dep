@@ -1,3 +1,5 @@
+#Tutorial https://misaelgomes.com.br/otimizando-alocacao-de-memoria-no-mysql-com-jemalloc/
+
 nano /lib/systemd/system/mysql.service
 LimitNOFILE = 65535
 systemctl daemon-reload
