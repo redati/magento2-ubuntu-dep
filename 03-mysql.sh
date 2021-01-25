@@ -1,4 +1,5 @@
 #!/bin/bash
+# https://misaelgomes.com.br/otimizando-alocacao-de-memoria-no-mysql-com-jemalloc/
 
 
 #versões
