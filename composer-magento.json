@@ -18,7 +18,6 @@
     },
     "replace": {
 		"magento/module-wishlist-analytics": "*",
-		"magento/module-offline-shipping": "*",
 		"magento/module-login-as-customer-sales": "*",
 		"magento/module-login-as-customer-quote": "*",
 		"magento/module-login-as-customer-page-cache": "*",
@@ -183,18 +182,6 @@
 	"0": {
             "type": "composer",
             "url": "https://repo.magento.com/"
-        },
-        "amasty": {
-            "type": "composer",
-            "url": "https://composer.amasty.com/community/"
-        },
-        "magento-baler": {
-            "type": "vcs",
-            "url": "git@github.com:magento/m2-baler.git"
-        },
-        "swissuplabs": {
-            "type": "composer",
-            "url": "https://ci.swissuplabs.com/api/packages.json"
         }
     },
     "extra": {
