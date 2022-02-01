@@ -5,6 +5,10 @@ adicione:
 * hard nproc 65536
 * soft nofile 65536
 * hard nofile 65536
+root soft nofile 65536
+root hard nofile 65536
+
+
 ----------------------------------------------------------------------------
 verifique: cat /proc/sys/net/ipv4/tcp_fastopen
 se não, então: echo "3" > /proc/sys/net/ipv4/tcp_fastopen
