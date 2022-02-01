@@ -32,6 +32,12 @@ net.ipv4.icmp_ignore_bogus_error_responses = 1
 net.ipv4.icmp_echo_ignore_broadcasts = 1
 net.ipv4.tcp_fastopen = 3
 vm.swappiness=10
+net.core.rmem_max = 16777216
+net.core.wmem_max = 16777216
+net.ipv4.tcp_wmem = 4096 12582912 16777216
+net.ipv4.tcp_rmem = 4096 12582912 16777216
+net.ipv4.tcp_slow_start_after_idle = 0
+
 
 
 execute:
