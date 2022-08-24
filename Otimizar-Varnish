@@ -1,3 +1,13 @@
+Executar sudo systemctl edit --full varnish
+para que seja criado a configuração em /etc/systemd/sytem/varnish.service
+
+caso ela fique em /lib/systemd/system/varnish.service ela podera ser revertida para o original
+O fato de /lib/systemd/system/varnish.serviceser revertido não deve ser realmente um problema, porque você deve ter uma cópia desse arquivo /etc/systemd/sytemque contenha os valores apropriados.
+Se você executar sudo systemctl edit varnishe realizar alterações, um novo arquivo chamado /etc/systemd/system/varnish.service.d/override.confserá criado.
+Se você chamar sudo systemctl edit --full varnishum arquivo chamado /etc/systemd/sytem/varnish.serviceserá criado.
+Também é possível fazer isso manualmente executando sudo cp /lib/systemd/system/varnish.service /etc/systemd/system/, mas isso também requer chamar sudo systemctl daemon-reload.
+
+
 Verificar erros na configuração:
 varnishd -C -f /etc/varnish/default.vcl
 
